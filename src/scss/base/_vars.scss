@@ -1,0 +1,18 @@
+:root {
+  --white: #fff;
+  --light-grey: #ebebeb;
+  --hover: #c6876d;
+  --main-dark: #222;
+  --btn-border: rgba(34, 34, 34, 0.3);
+  --btn-color: rgba(34, 34, 34, 1);
+  --red: rgba(235, 87, 87, 1);
+  --green: rgba(33, 150, 83, 1);
+  --blue: rgba(47, 128, 237, 1);
+  --purple: rgba(155, 81, 224, 1);
+  --text-shadow: -1px -1px 0 var(--main-dark), 1px -1px 0 var(--main-dark),
+    -1px 1px 0 var(--main-dark), 1px 1px 0 var(--main-dark);
+
+  --placeholder: #909090;
+  --error: #da2128;
+  --success: #78a873;
+}

@@ -1,0 +1,241 @@
+.contacts {
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (width<=992px) {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      row-gap: 80px;
+    }
+
+    @media (width<=768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__info-inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+
+    @media (width<=768px) {
+      width: 100%;
+      text-align: center;
+      row-gap: 24px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    a {
+      @media (hover: hover) {
+        &:hover {
+          color: var(--hover);
+        }
+      }
+    }
+    &-title {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &-text {
+      font-family: 'Montserrat', serif;
+      font-size: 13px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    &-social {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+
+      @media (width<=768px) {
+        justify-content: center;
+      }
+
+      &-link {
+        width: 30px;
+        aspect-ratio: 1;
+        border-radius: 2px;
+        background-color: var(--main-dark);
+        display: inline-block;
+        transition: background-color 0.3s ease;
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: var(--hover);
+          }
+        }
+      }
+    }
+
+    &-form {
+      font-family: 'Montserrat', serif;
+      font-weight: 500;
+
+      @media (width<=992px) {
+        max-width: 500px;
+      }
+
+      @media (width<=768px) {
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      &-field {
+        position: relative;
+      }
+
+      &-close,
+      &-success {
+        position: absolute;
+        right: 0;
+        bottom: 6px;
+        cursor: pointer;
+        display: none;
+      }
+      &-file {
+        position: absolute;
+        bottom: 6px;
+        right: 30px;
+        cursor: pointer;
+
+        &-input {
+          opacity: 0;
+          position: absolute;
+        }
+      }
+
+      &-label {
+        font-size: 9px;
+      }
+
+      &-input {
+        display: block;
+        width: 100%;
+        height: 24px;
+        border-bottom: 1px solid var(--light-grey);
+        transition: border-color 0.3s ease;
+
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+
+        &:last-child {
+          margin-bottom: 30px;
+        }
+
+        &::placeholder {
+          font-size: 13px;
+          line-height: 24px;
+          color: var(--placeholder);
+        }
+
+        &::-webkit-input-placeholder {
+          font-size: 13px;
+          line-height: 24px;
+        }
+        &::-moz-placeholder {
+          font-size: 13px;
+          line-height: 24px;
+        }
+        &:-ms-input-placeholder {
+          font-size: 13px;
+          line-height: 24px;
+        }
+        &::-ms-input-placeholder {
+          font-size: 13px;
+          line-height: 24px;
+        }
+
+        &:focus {
+          border-color: var(--main-dark);
+
+          &::placeholder {
+            color: var(--main-dark);
+          }
+        }
+        &.error {
+          border-color: var(--error);
+          color: var(--error);
+
+          &::placeholder {
+            color: var(--error);
+          }
+
+          &::-webkit-input-placeholder {
+            color: var(--error);
+          }
+          &::-moz-placeholder {
+            color: var(--error);
+          }
+          &:-ms-input-placeholder {
+            color: var(--error);
+          }
+          &::-ms-input-placeholder {
+            color: var(--error);
+          }
+        }
+        &.success {
+          border-color: var(--success);
+          color: var(--success);
+        }
+      }
+
+      &-agreement {
+        color: var(--placeholder);
+        font-size: 9px;
+        margin-bottom: 30px;
+        display: inline-block;
+        span {
+          color: var(--main-dark);
+        }
+      }
+
+      &-btn {
+        padding: 10px 33px;
+
+        @media (width<=992px) {
+          display: flex;
+          align-items: center;
+          margin: 0 auto;
+        }
+      }
+
+      &-error {
+        display: none;
+        position: absolute;
+        bottom: -20px;
+        font-size: 9px;
+        color: var(--error);
+      }
+    }
+  }
+}
+
+.form__file {
+  &-close,
+  &-success {
+    bottom: 6px;
+    right: 0;
+  }
+}
+.form-files {
+  background-color: var(--main-dark);
+  width: fit-content;
+  margin-left: auto;
+  border-radius: 8px;
+  padding: 10px;
+  display: none;
+  position: relative;
+}

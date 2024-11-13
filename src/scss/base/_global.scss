@@ -1,0 +1,131 @@
+.icon path {
+  transition: fill 0.2s;
+}
+
+.icon {
+  @media (hover: hover) {
+    &:hover path {
+      fill: var(--hover);
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--btn-border);
+  min-width: 140px;
+  height: 40px;
+  max-width: 260px;
+  padding: 10px 48px;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  color: var(--btn-color);
+  font-weight: 800;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    width: 24px;
+    height: 1px;
+    background-color: var(--btn-color);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--btn-color);
+    box-sizing: border-box;
+    opacity: 0;
+    z-index: -1;
+    clip-path: inset(0 100% 0 0);
+    transition: opacity 0.3s;
+  }
+
+  @media (hover: hover) {
+    &:hover::after {
+      opacity: 1;
+      animation: border-fill-rotate 2s linear infinite;
+    }
+  }
+}
+
+@keyframes border-fill-rotate {
+  0% {
+    clip-path: inset(0 100% 0 0); // Start at the top-left corner
+  }
+  25% {
+    clip-path: inset(0 0 100% 0); // Reveal the top border
+  }
+  50% {
+    clip-path: inset(0 0 0 0); // Reveal the right border
+  }
+  75% {
+    clip-path: inset(0 0 0 100%); // Reveal the bottom border
+  }
+  100% {
+    clip-path: inset(
+      0 100% 0 0
+    ); // Return to the start, creating a seamless loop
+  }
+}
+section {
+  margin-bottom: 136px;
+
+  @media (width<=992px) {
+    margin-bottom: 100px;
+  }
+
+  @media (width<=768px) {
+    margin-bottom: 88px;
+  }
+}
+
+.section-title {
+  font-size: 32px;
+  line-height: 40px;
+  position: relative;
+  margin-bottom: 48px;
+
+  @media (width<=1250px) {
+    padding-left: 60px;
+  }
+
+  @media (width<=992px) {
+    padding-left: 0;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 1px;
+    background-color: var(--btn-color);
+    top: 50%;
+    left: -60px;
+
+    @media (width<=1250px) {
+      left: 0;
+    }
+
+    @media (width<=992px) {
+      content: none;
+    }
+  }
+
+  span {
+    text-shadow: var(--text-shadow);
+    color: var(--white);
+  }
+
+  @media (width<=992px) {
+    text-align: center;
+  }
+}

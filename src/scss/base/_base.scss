@@ -1,0 +1,17 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bgColor);
+  font-family: 'Gilroy-Regular', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 20px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
